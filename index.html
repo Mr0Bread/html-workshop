@@ -49,9 +49,24 @@
         </button>
     </form>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
+
+    <div id="latitude"></div>
+    <div id="longitude"></div>
+
+    <script>
+        const latitude = document.getElementById('latitude');
+        navigator.geolocation.getCurrentPosition((position) => {
+            latitude.innerHTML = position.coords.latitude;
+        });
+
+        const longitude = document.getElementById('longitude');
+        navigator.geolocation.getCurrentPosition((position) => {
+            longitude.innerHTML = position.coords.longitude;
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
         integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
