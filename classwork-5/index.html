@@ -16,8 +16,16 @@
         </button>
     </form>
 
+    <div>
+        <img src="./arrow.jpeg" alt="arrow" id="arrow">
+    </div>
+    <button
+        id="move-button"
+    >
+        move to right
+    </button>
+
     <script>
-        // change button color on hover
         const button = document.querySelector('button');
 
         button.addEventListener('mouseover', () => {
@@ -26,6 +34,16 @@
 
         button.addEventListener('mouseout', () => {
             button.style.backgroundColor = 'white';
+        });
+    </script>
+
+    <script>
+        const moveButton = document.querySelector('#move-button');
+        const arrow = document.querySelector('#arrow');
+
+        moveButton.addEventListener('click', () => {
+            const currentMargin = parseInt(arrow.style.marginLeft) || 0;
+            arrow.style.marginLeft = `${currentMargin + 10}px`;
         });
     </script>
 </body>
