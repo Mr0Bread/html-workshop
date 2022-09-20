@@ -1,0 +1,10 @@
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 0.2ch;
+}
