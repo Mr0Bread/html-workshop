@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $("#first").click(function () {
+                alert("You clicked on the div");
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#second").hover(function () {
+                alert("You hovered on the span");
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#show-animation").click(function () {
+                $("#third")
+                    .animate({
+                        left: '250px',
+                        opacity: '0.5',
+                        height: '150px',
+                        width: '150px'
+                    })
+                    .animate({
+                        left: '0px',
+                        opacity: '1',
+                        height: '100px',
+                        width: '100px'
+                    })
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(document).mousemove(function () {
+                const amount = document.querySelector('#move-counter').innerText;
+
+                $("#move-counter").text(parseInt(amount) + 1);
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div id="first" style="margin-bottom: 100px">
+        Click me
+    </div>
+
+    <span id="second">
+        Hover me
+    </span>
+
+    <div id="third" style="background:#125f21;height:100px;width:100px;position:relative;">
+        Slide animation
+    </div>
+    <button id="show-animation">
+        Show animation
+    </button>
+
+    <div>
+        <span>
+            Mouse move amount: 
+        </span>
+        <span id="move-counter">
+            0
+        </span>
+    </div>
+</body>
+
+</html>
